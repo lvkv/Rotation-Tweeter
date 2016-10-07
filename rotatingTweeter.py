@@ -20,12 +20,12 @@ oauth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 oauth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 api = tweepy.API(oauth)
 
-text_path = os.path.dirname(os.path.realpath(__file__)) + '\\rotation_schedule.txt'
+text_path = os.path.dirname(os.path.realpath(__file__)) + '/rotation_schedule.txt'
 text_file = open(text_path, 'r')
 text = text_file.read()
 lines = text.split('\n')
 
-current_datee = time.strftime("%m/%d/%y")
+current_date = time.strftime("%m/%d/%y")
 lookup_table = []
 
 last_line = []
@@ -50,11 +50,4 @@ for line in lines:
         print(message)
     else:
         last_line = lookup
-                
-                
 print('end')
-            
-        
-        
-
-
